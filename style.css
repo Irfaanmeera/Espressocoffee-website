@@ -20,18 +20,6 @@
     margin: 0 auto;
   }
   
-  @media (min-width: 1200px) {
-    .container-custom { width: 1140px; }
-  }
-  
-  @media (min-width: 1400px) {
-    .container-custom { width: 1340px; }
-  }
-  
-  @media (min-width: 1600px) {
-    .container-custom { width: 1520px; }
-  }
-  
   /*
   * Main Header
   */
@@ -59,17 +47,14 @@
 }
 .navbar{
   backdrop-filter: blur(5px);
-  background-color: rgba(23, 22, 22);
+  background-color: rgb(23, 22, 22);
   padding-left: 10px;
-
+position: fixed;
 }
 .arrow:hover{
   color:blue;
 }
-  /*
-  * Flyout Navigation Bar
-  */
-  
+
   
   /*
   * Hero Section
@@ -124,39 +109,9 @@
     max-width: 540px;
   }
   
-  .hero__scroll-btn {
-    position: absolute;
-    left: 50%;
-    bottom: 30px;
-    transform: translateX(-50%);
-    z-index: 1;
-    color: var(--bs-light);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-  }
   
-  .hero__scroll-btn:hover {
-    color: var(--bs-light);
-    opacity: 0.8;
-  }
-  
-  .hero__scroll-btn .bi {
-    transition-delay: 0.8s;
-    animation: bounce 1s infinite alternate;
-  }
   
    
-  @keyframes bounce {
-    from {
-      transform: translateY(0px);
-    }
-    to {
-      transform: translateY(-10px);
-    }
-  }
-  
   
   /*
   * Steps Section
@@ -309,7 +264,285 @@
     clear: both;
   }
   
-  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  :root {
+    --primary-color: #0a1118;
+    --primary-color-highlight: #233D54;
+    --bs-body-bg: #eae2e6;
+    --bs-body-font-family: 'Montserrat', sans-serif;
+  }
+  
+  html {scroll-behavior: smooth;}
+  
+  a { color: var(--primary-color); }
+  a:hover { color: var(--primary-color); }
+  
+ 
+  /*
+  * Custom Container
+  */
+  .container-custom {
+    width: 100%;
+    padding: 0 1rem;
+    margin: 0 auto;
+  }
+  
+  /*
+  * Main Header
+  */
+  .header {
+    z-index: 2;
+  }
+ .nav-link{
+  color:#fff
+ }
+
+
+.navbar-brand {
+  font-size: 1.75rem;
+  letter-spacing: 3px;
+  color:antiquewhite;
+  padding-right:60px;
+}
+.nav-link {
+  color:#fff;
+}
+.navbar-toggler-icon{
+  background-color: white;
+  border-radius: 2px;
+  padding:3px;
+}
+.navbar{
+  backdrop-filter: blur(5px);
+  background-color: rgb(23, 22, 22);
+  padding-left: 10px;
+position: fixed;
+}
+.arrow:hover{
+  color:blue;
+}
+
+  
+  /*
+  * Hero Section
+  */
+  .hero {
+    position: relative;
+    height: 100vh;
+    background-color: var(--primary-color);
+    overflow: hidden;
+  }
+  
+  @media (min-width: 1400px) {
+    .hero__heading {
+        font-size: 3.2rem;
+        
+    }
+  }
+  @media (max-width: 768px)  {
+    .hero__heading {
+      color:aqua;
+  }
+  }
+
+  
+  .hero__video {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  
+  .hero__overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--primary-color);
+    opacity: 0.5;
+    z-index: 1;
+  }
+  
+  .hero__content {
+    z-index: 1;
+  }
+  
+  .hero__content-width {
+    max-width: 540px;
+  }
+  
+  
+  
+   
+  
+  /*
+  * Steps Section
+  */
+  .steps {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  
+  .steps__section-thumbnail {
+    height: 240px;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+  
+  .steps__content-width {
+    max-width: 456px;
+    margin: 0 auto;
+  }
+  
+  .steps--background {
+    background-color: #FEF8F9;
+  }
+  
+  @media (min-width: 544px) {
+    .steps {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  
+    .steps__section-thumbnail {
+      height: auto;
+    }
+  }
+  .sent-message {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+  }
+  
+  .loading {
+    display: none;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+  }
+  
+   .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid #18d26e;
+    border-top-color: #eee;
+    animation: animate-loading 1s linear infinite;
+  }
+  
+   input,textarea {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+  }
+  
+   input:focus,
+   textarea:focus {
+    border-color: #0078ff;
+  }
+  
+  input {
+    padding: 10px 15px;
+  }
+  
+   textarea {
+    padding: 12px 15px;
+    margin-bottom: 0;
+  }
+  button[type=submit] {
+    background: #0078ff;
+    border: 0;
+    padding: 10px 24px;
+    color: #fff;
+    transition: 0.4s;
+  }
+  
+   button[type=submit]:hover {
+    background: #3393ff;
+  }
+  
+  .title-box{
+    padding-top:10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .list-ico{
+    list-style: none;
+  }
+  .lead{
+    padding:10px;
+  }
+  
+
+
+ 
+  /* Style inputs */
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Style the container/contact section */
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+  
+  /* Create two columns that float next to eachother */
+  .column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+ 
+  @media screen and (max-width: 600px) {
+    .column, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+  /*
+  * Footer
+  */
+  .footer .border-highlight {
+    border-top: 1px solid var(--primary-color-highlight);
+  }
   @media screen and (max-width: 600px) {
     .column, input[type=submit] {
       width: 100%;
