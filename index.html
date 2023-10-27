@@ -29,9 +29,9 @@
 
   <!-- Navbar Start -->
   <header>
-    <nav class="navbar navbar-expand-lg ">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Espresso Coffee</a>
+    <nav class="navbar fixed-top navbar-expand-lg ">
+      <div class="container-fluid justify-content-between align-items-center">
+        <a class="navbar-brand fs-2 fw-bold" href="#">Espresso Coffee</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"><i class="bi bi-list"></i></span>
           
@@ -75,7 +75,8 @@
           <h1 class="hero__heading fw-bold mb-4">Discover The Taste Of Real Coffee.</h1>
           <p class="lead mb-4">Welcome to Espresso Coffee, where the aroma of freshly roasted coffee beans meets the warmth of a cozy atmosphere. 
             Step inside and experience the perfect blend of tradition and innovation.</p>
-          <a href="#contact" class="mt-2 btn btn-lg btn-outline-light" role="button">Buy Now</a>
+          <a href="#contact" class="mt-2 btn btn-lg
+           btn-outline-light" role="button">Buy Now</a>
         </div>
       </div>
     </div>
@@ -90,7 +91,7 @@
 
     <div class="row">
       
-      <div class="col-12 col-sm-6 d-md-flex justify-content-md-ceneter" id="features">
+      <div class="col-12 col-sm-6 d-md-flex justify-content-md-center" id="features">
         <img src="img/1-coffe-flavour.jpg" alt="Coffe Flavour" class="img-fluid pb-4 steps__section-thumbnail" width="553" height="746" loading="lazy">
       </div>
 
@@ -200,24 +201,29 @@
     <div style="text-align:center">
       <h2>Contact Us</h2>
       <p>Swing by for a cup of coffee, or leave us a message:</p>
+      <p>Contact: +91***235678</p>
     </div>
     <div class="row">
       <div id="contact">
        <div class="column">
         <form action="" id="submit-form" >
           <label for="Name">Name</label>
-          <input type="text" id="name" name="Name" placeholder="Your name">
+          <input type="text" id="name" name="Name" placeholder="Your name" required>
+          
+
           <label for="Email">Email</label>
-          <input type="text" id="email" name="Email" placeholder="Your mail id">
+          <input type="text" id="email" name="Email" placeholder="Your mail id" required>
+
           <label for="Outlet">Outlet</label>
-          <select id="outlet" name="Outlet">
+          <select id="outlet" name="Outlet" required>
             <option value="Avadi">Avadi</option>
             <option value="Perambur">Perambur</option>
             <option value="Thiruverkadu">Thiruverkadu</option>
           </select>
+
           <label for="subject">Subject</label>
           <textarea id="subject" name="Message" placeholder="Write something.." style="height:140px"></textarea>
-          <input type="submit" value="Submit">
+          <input type="submit" value="Submit" required>
         </form>
         </div>
       </div>
@@ -248,7 +254,10 @@
 
   <script>
     $("#submit-form").submit((e)=>{
+    
         e.preventDefault()
+        
+      
         $.ajax({
             url:"https://script.google.com/macros/s/AKfycbwL833UEIIvEw8H8zN6MwVw1sxxiMmgy0coO9Tj_fjjEy7y5NEPMv_jgoHez3EcpSBnqg/exec",
             data:$("#submit-form").serialize(),
